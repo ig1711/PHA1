@@ -63,10 +63,10 @@ function printBookDetails(book: Book) {
 }
 
 
-function getUniqueValues<T extends string | number, U extends Array<T>, V extends U>(array1: U, array2: V): V {
-    const temp = new Array<T>();
+function getUniqueValues(array1: Array<string | number>, array2: Array<string | number>): Array<string | number> {
+    const temp = new Array<string | number>();
 
-    function getItemAtIndex(index: number): T {
+    function getItemAtIndex(index: number): string | number {
         if (index < array1.length) return array1[index];
         else return array2[index - array1.length];
     }
@@ -79,7 +79,7 @@ function getUniqueValues<T extends string | number, U extends Array<T>, V extend
         temp[temp.length] = getItemAtIndex(i);
     }
 
-    return temp as V;
+    return temp;
 }
 
 
