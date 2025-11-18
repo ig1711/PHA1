@@ -84,7 +84,7 @@ interface Cargo {
     loadUnloadDelay: number;
 }
 ```
-### Union type er example:
+### Union type এর example:
 ধরুন আমরা `Plane`, `RoadTransport` বা `Ship` যেকোন একটি `Vehicle` এর কিছু details print করার একটি function তৈরি করতে চাই, আমরা সেটি এভাবে করতে পারি
 ```ts
 function printDetails(vehicle: Plane | RoadTransport | Ship) {
@@ -129,7 +129,7 @@ printDetails(jashimsPlane);
 printDetails(mannasTruck);
 printDetails(shakibsShip);
 ```
-### Intersection type er example:
+### Intersection type এর example:
 ধরুন আমাদের একটি function লাগবে যেটা কোন cargo truck এর প্রতি চাকা তে maximum কত kg load পড়বে সেটা output দিবে।  function টিতে দরকার পরবে চাকার সংখ্যা যা `RoadTransport` type এ আছে (wheels) এবং load capacity, যা `Cargo` type এ আছে। তাহলে এই function টির parameter হিসেবে আমরা শুধু সেই সকল object ই নিতে পারবো যেগুলোতে `RoadTransport` এবং `Cargo` উভয় type এরই property গুলো রয়েছে। এই constraint টি typescript এ ব্যখ্যা করার জন্য আমরা যে type টি ব্যবহার করি সেটা হল intersection type
 ```ts
 type CargoRoadVehicle = RoadTransport & Cargo;
